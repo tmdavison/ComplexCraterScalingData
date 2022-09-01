@@ -1,0 +1,101 @@
+#ISINP
+------------------------------------------------------------------------
+--- this is the new input file used by iSALE versions of v7.0 and higher
+------------------------------------------------------------------------
+--- lines beginning with '-' or '!' are treated as comments and not
+--- further processed. The difference between the two comment lines
+--- is, lines starting with '-' will appear also in the backup of this
+--- input file and in the header of the jpeg-file, whereas lines
+--- beginning with '!' are completely removed from these files.
+------------------------------------------------------------------------
+--- First 8 columns are reserved for short parameter identification  ---
+--- (available abbreviations are found in the documentation)         ---
+---                                                                  ---
+--- The next 20 columns are reserved for parameter description!      ---
+---                                                                  ---
+------------------- General Model Info ---------------------------------
+VERSION       __DO NOT MODIFY__             : 4.1
+DIMENSION     dimension of input file       : 3
+PATH          Data file path                : ./
+MODEL         Modelname                     : A30_v20_L09_Moon
+DUMP          Restart Filename              : NONE
+------------------- Mesh Geometry Parameters ---------------------------
+GRIDH         horizontal cells              : 60          : 456         : 60
+GRIDV         vertical cells                : 50          : 140         : 40
+GRIDD         depth cells                   : 0           : 192         : 58
+GRIDEXT       ext. factor                   : 1.04d0
+GRIDSPC       grid spacing                  : 320.D0
+GRIDSPCM      max. grid spacing             : -20.D0
+------------------- Global Setup Parameters ----------------------------
+S_TYPE        setup type                    : DEFAULT
+ALE_MODE      ALE modus                     : EULER
+T_SURF        Surface temp                  : 293.D0
+GRAV_V        gravity                       : -1.62D0
+GRAD_TYPE     gradient type                 : DEFAULT
+GRAD_DIM      gradient dimension            : 1
+GRAD_OBJ      gradient in obj.              : 0
+ROCUTOFF      density cutoff                : 5.D0
+------------------- Projectile Parameters ------------------------------
+OBJNUM        number of proj.               : 1
+PR_TRACE      collision tracers             : 0
+OBJRESH       CPPR horizontal               : 14
+OBJRESV       CPPR vertical                 : 14
+OBJRESD       CPPR depth                    : 14
+OBJVEL        object velocity               : -2.0D4
+ANGLE         inc. angle (X-Z)              : 30.d0
+ANGLE2        inc. angle (Y-Z)              : 0.D0
+OBJMAT        object material               : granite
+OBJTYPE       object type                   : SPHEROID
+OBJTPROF      object temp prof              : CONDCONV
+OBJENER       object energy                 : 0.D0
+OBJTEMP       object temp                   : 293.D0
+OBJOFF_H      object shift hor              : 68
+OBJOFF_V      object shift ver              : 0
+OBJOFF_D      object shift dpth             : 0
+OBJDAM        object damage                 : 1.D0
+------------------- Target Parameters ----------------------------------
+LAYNUM        number of layers              : 2
+LAYTYPE       layer type                    : 0
+LAYPOS        layer position                : 44          : 147
+LAYMAT        layer material                : dunite_     : granite
+LAYTPROF      layer therm. prof             : CONDCONV    : CONDCONV
+------------------- Time Parameters ------------------------------------
+DT            initial time increment        : 5.0D-3
+DTMAX         maximum timestep              : 5.D-2
+TEND          end time                      : 7.001D2
+DTSAVE        save interval                 : 2.5D0
+TDUMP         dump interval                 : -22.5d0
+TLIM          wallclock limit               : 3.6D5
+------------------- Boundary Conditions --------------------------------
+BND_L         left                          : FSLIP_OUT
+BND_R         right                         : FSLIP_OUT
+BND_B         bottom                        : NOSLIP
+BND_T         top                           : OUTFLOW
+BND_F         front                         : FREESLIP
+BND_BK        back                          : FSLIP_OUT
+BND_HYB_V     hybrid switchover             : 147
+------------------- Numerical Stability Parameters ---------------------
+AVIS          art. visc. linear             : 0.24D0
+AVIS2         art. visc. quad.              : 1.2D0
+ANC           alt. node coupl.              : 0.0D0
+EPS_MIN       vol. frac. cutoff             : 1.D-6
+------------------- Tracer Particle Parameters -------------------------
+TR_QUAL       tracer quality                : 1
+TR_SPCH       spacing horiz.                : -1.D0       : -1.D0       : -1.D0
+TR_SPCV       spacing vertical              : -1.D0       : -1.D0       : -1.D0
+TR_SPCD       spacing depth                 : -1.D0       : -1.D0       : -1.D0
+TR_VAR        add. tracer fiels             : #TrP-TrT#
+------------------- Ac. Fluid. Parameters (read in read_material) ------
+CVIB          c_vib                         : 0.1D0
+TOFF          toff                          : 16.D0
+VIB_MAX       Max. vib.vel.                 : 200.D0
+------------------- Data Saving Parameters -----------------------------
+QUALITY       Compression rate              : -50
+VARLIST       List of variables             : #Den-Pre-Tmp-Yld-Dam-YAc-VEL-Vib-Sie-ICx-ICy-ICz-PMx#
+RANGE         write range                   : 1
+RANGEH        write range hor.              : 0           : 0
+RANGEV        write range ver.              : 0           : 0
+RANGED        write range dpth              : 0           : 0
+-------------------- Superflous later ----------------------------------
+STRESS        calc_stress                   : 1
+<<END
